@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Trophy, Users, Target, Star, Award, TrendingUp } from "lucide-react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
+import type { Metadata } from 'next';
 
 const houseData = {
   red: {
@@ -128,13 +129,7 @@ const houseData = {
   },
 }
 
-interface PageProps {
-  params: {
-    house: string
-  }
-}
-
-export default function HousePage({ params }: PageProps) {
+export default function HousePage({ params }: { params: { house: string } }) {
   const house = houseData[params.house as keyof typeof houseData]
 
   if (!house) {
@@ -340,7 +335,7 @@ export async function generateStaticParams() {
   return [{ house: "red" }, { house: "blue" }, { house: "green" }, { house: "yellow" }]
 }
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: { house: string } }): Promise<Metadata> {
   const house = houseData[params.house as keyof typeof houseData]
 
   if (!house) {

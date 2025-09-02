@@ -412,9 +412,3 @@ export default function ContactPage() {
     </div>
   )
 }
-
-export const metadata = {
-  title: "Contact Us - Eclipse 2025",
-  description:
-    "Get in touch with the Eclipse 2025 organizing team. Contact information, inquiry form, and frequently asked questions for Curtin University Colombo's inaugural sports meet.",
-}
