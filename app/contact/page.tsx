@@ -25,7 +25,7 @@ import {
 
 const organizers = [
   {
-    name: "Sarah Johnson",
+    name: "Sara Johnson",
     role: "Event Director",
     email: "sarah.johnson@curtin.edu.lk",
     phone: "+94 11 123 4567",
