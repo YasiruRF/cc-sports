@@ -397,7 +397,7 @@ export default function ContactPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Join Eclipse 2025?</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Don't miss out on Curtin University Colombo's inaugural sports meet. Register now and be part of history!
+            Don&apos;t miss out on Curtin University Colombo&apos;s inaugural sports meet. Register now and be part of history!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="text-lg px-8">

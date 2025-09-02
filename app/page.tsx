@@ -18,7 +18,7 @@ export default function HomePage() {
               Eclipse <span className="text-primary animate-pulse">2025</span>
             </h1>
             <p className="text-xl md:text-2xl mb-4 text-muted-foreground max-w-3xl mx-auto text-balance">
-              Curtin University Colombo's Inaugural Sports Meet
+              Curtin University Colombo&apos;s Inaugural Sports Meet
             </p>
             <p className="text-lg mb-8 text-muted-foreground/80 max-w-2xl mx-auto">
               Where champions are born and legends are made. Join us for a day of athletic excellence and university
@@ -127,7 +127,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="text-xl font-semibold mb-3">Memorable Experience</h3>
                 <p className="text-muted-foreground">
-                  A complete day of sports, entertainment, and university community building that you'll remember
+                  A complete day of sports, entertainment, and university community building that you&apos;ll remember
                   forever.
                 </p>
               </CardContent>
@@ -200,7 +200,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Make History?</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Be part of Curtin University Colombo's inaugural sports meet. Register now and help us create an
+            Be part of Curtin University Colombo&apos;s inaugural sports meet. Register now and help us create an
             unforgettable legacy.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

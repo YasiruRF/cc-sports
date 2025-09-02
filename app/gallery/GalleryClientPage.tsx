@@ -130,7 +130,6 @@ const getFilteredItems = (category: string) => {
 
 export default function GalleryClientPage() {
   const [selectedCategory, setSelectedCategory] = useState("all")
-  const [selectedItem, setSelectedItem] = useState<any>(null)
 
   const filteredItems = getFilteredItems(selectedCategory)
 

@@ -12,7 +12,7 @@ export default function AboutPage() {
             About <span className="text-primary">Eclipse 2025</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto text-balance">
-            The dawn of a new era in Curtin University Colombo's sporting legacy
+            The dawn of a new era in Curtin University Colombo&apos;s sporting legacy
           </p>
         </div>
       </section>
@@ -24,12 +24,12 @@ export default function AboutPage() {
             <div>
               <h2 className="text-3xl md:text-4xl font-bold mb-6">A Historic Beginning</h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Eclipse 2025 marks a pivotal moment in Curtin University Colombo's history as we launch our very first
-                sports meet. This inaugural event represents more than just competition – it's the foundation of a
+                Eclipse 2025 marks a pivotal moment in Curtin University Colombo&apos;s history as we launch our very first
+                sports meet. This inaugural event represents more than just competition – it&apos;s the foundation of a
                 sporting tradition that will inspire generations of students to come.
               </p>
               <p className="text-lg text-muted-foreground mb-6">
-                Named "Eclipse" to symbolize a moment of extraordinary alignment – where athletic excellence, university
+                Named &quot;Eclipse&quot; to symbolize a moment of extraordinary alignment – where athletic excellence, university
                 pride, and community spirit converge to create something truly spectacular. Just as a solar eclipse is a
                 rare and awe-inspiring phenomenon, our sports meet promises to be an unforgettable experience that will
                 leave a lasting impression on everyone involved.
@@ -70,7 +70,7 @@ export default function AboutPage() {
                   <Users className="h-12 w-12 text-primary mx-auto mb-4" />
                   <h3 className="text-xl font-semibold mb-3">Global Excellence</h3>
                   <p className="text-muted-foreground">
-                    Part of Curtin University's international network, bringing world-class education to Sri Lanka with
+                    Part of Curtin University&apos;s international network, bringing world-class education to Sri Lanka with
                     a focus on innovation and practical learning.
                   </p>
                 </CardContent>
@@ -140,9 +140,9 @@ export default function AboutPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Event Theme & Purpose</h2>
             <div className="max-w-4xl mx-auto text-center">
               <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-lg p-8 md:p-12 mb-8">
-                <h3 className="text-2xl font-bold mb-4 text-primary">"Where Champions Rise"</h3>
+                <h3 className="text-2xl font-bold mb-4 text-primary">&quot;Where Champions Rise&quot;</h3>
                 <p className="text-lg text-muted-foreground mb-6">
-                  Eclipse 2025 is more than a sports meet – it's a celebration of human potential, determination, and
+                  Eclipse 2025 is more than a sports meet – it&apos;s a celebration of human potential, determination, and
                   the power of unity. Our theme reflects the belief that every participant has the potential to be a
                   champion, whether they win gold or simply give their best effort.
                 </p>

@@ -15,7 +15,7 @@ export function Footer() {
               <span className="text-xl font-bold">Eclipse 2025</span>
             </div>
             <p className="text-muted-foreground mb-4 max-w-md">
-              Curtin University Colombo's Inaugural Sports Meet. Join us for an unforgettable day of competition,
+              Curtin University Colombo&apos;s Inaugural Sports Meet. Join us for an unforgettable day of competition,
               sportsmanship, and university pride at Torrington Grounds.
             </p>
             <div className="flex space-x-4">

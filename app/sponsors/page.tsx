@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Star, Award, Handshake, Zap, Heart, Trophy } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 
 const sponsors = {
   title: [
@@ -131,11 +132,14 @@ export default function SponsorsPage() {
             <Card key={index} className="max-w-4xl mx-auto border-primary/20 bg-card/50 backdrop-blur">
               <CardContent className="p-12 text-center">
                 <div className="mb-8">
-                  <img
-                    src={sponsor.logo || "/placeholder.svg"}
-                    alt={sponsor.name}
-                    className="h-24 mx-auto object-contain"
-                  />
+                  <div className="relative h-24 mx-auto">
+                    <Image
+                      src={sponsor.logo || "/placeholder.svg"}
+                      alt={sponsor.name}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
                 <h3 className="text-3xl font-bold mb-4">{sponsor.name}</h3>
                 <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">{sponsor.description}</p>
@@ -175,11 +179,14 @@ export default function SponsorsPage() {
                     </div>
                   )}
                   <div className="mb-4">
-                    <img
-                      src={sponsor.logo || "/placeholder.svg"}
-                      alt={sponsor.name}
-                      className="h-16 mx-auto object-contain"
-                    />
+                    <div className="relative h-16 mx-auto">
+                      <Image
+                        src={sponsor.logo || "/placeholder.svg"}
+                        alt={sponsor.name}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
                   </div>
                   <CardTitle className="text-xl">{sponsor.name}</CardTitle>
                 </CardHeader>
@@ -214,11 +221,14 @@ export default function SponsorsPage() {
               <Card key={index} className="hover:shadow-md transition-shadow duration-300">
                 <CardContent className="p-6 flex items-center space-x-4">
                   <div className="flex-shrink-0">
-                    <img
-                      src={sponsor.logo || "/placeholder.svg"}
-                      alt={sponsor.name}
-                      className="h-12 w-auto object-contain"
-                    />
+                    <div className="relative h-12 w-36">
+                      <Image
+                        src={sponsor.logo || "/placeholder.svg"}
+                        alt={sponsor.name}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
                   </div>
                   <div className="flex-1">
                     <h3 className="font-semibold mb-1">{sponsor.name}</h3>
@@ -244,11 +254,14 @@ export default function SponsorsPage() {
               <Card key={index} className="text-center hover:shadow-md transition-shadow duration-300">
                 <CardContent className="p-6">
                   <div className="mb-4">
-                    <img
-                      src={sponsor.logo || "/placeholder.svg"}
-                      alt={sponsor.name}
-                      className="h-10 mx-auto object-contain"
-                    />
+                    <div className="relative h-10 w-32 mx-auto">
+                      <Image
+                        src={sponsor.logo || "/placeholder.svg"}
+                        alt={sponsor.name}
+                        fill
+                        className="object-contain"
+                      />
+                    </div>
                   </div>
                   <h3 className="font-semibold text-sm mb-2">{sponsor.name}</h3>
                   <p className="text-xs text-muted-foreground">{sponsor.description}</p>

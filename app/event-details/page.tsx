@@ -248,7 +248,7 @@ export default function EventDetailsPage() {
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>• House assignment based on faculty/program</li>
                 <li>• Fair play and sportsmanship expected at all times</li>
-                <li>• Event officials' decisions are final</li>
+                <li>• Event officials&apos; decisions are final</li>
                 <li>• Spectators must follow venue guidelines</li>
               </ul>
             </div>
