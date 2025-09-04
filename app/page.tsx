@@ -8,50 +8,50 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-secondary via-secondary to-primary/20 text-secondary-foreground py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/abstract-sports-pattern-background.png')] opacity-5"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent"></div>
+      <section className="relative bg-black text-secondary-foreground h-screen overflow-hidden">
+  <div className="absolute inset-0 bg-[url('/abstract-sports-pattern-background.png')] opacity-5"></div>
+  <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent"></div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="animate-fade-in-up">
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">
-              Eclipse <span className="text-primary animate-pulse">2025</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-4 text-muted-foreground max-w-3xl mx-auto text-balance">
-              Curtin University Colombo&apos;s Inaugural Sports Meet
-            </p>
-            <p className="text-lg mb-8 text-muted-foreground/80 max-w-2xl mx-auto">
-              Where champions are born and legends are made. Join us for a day of athletic excellence and university
-              pride.
-            </p>
+  <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center h-full">
+    <div className="animate-fade-in-up">
+      <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance">
+        Eclipse <span className="text-primary animate-pulse">2025</span>
+      </h1>
+      <p className="text-xl md:text-2xl mb-4 text-muted-foreground max-w-3xl mx-auto text-balance">
+        Curtin University Colombo&apos;s Inaugural Sports Meet
+      </p>
+      <p className="text-lg mb-8 text-muted-foreground/80 max-w-2xl mx-auto">
+        Where champions are born and legends are made. Join us for a day of athletic excellence and university pride.
+      </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
-              <div className="flex items-center space-x-3 text-lg bg-card/20 backdrop-blur px-4 py-2 rounded-full">
-                <Calendar className="h-5 w-5 text-primary" />
-                <span className="font-semibold">September 20th, 2025</span>
-              </div>
-              <div className="flex items-center space-x-3 text-lg bg-card/20 backdrop-blur px-4 py-2 rounded-full">
-                <MapPin className="h-5 w-5 text-primary" />
-                <span className="font-semibold">Torrington Grounds, Colombo</span>
-              </div>
-            </div>
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
+        <div className="flex items-center space-x-3 text-lg bg-card/20 backdrop-blur px-4 py-2 rounded-full">
+          <Calendar className="h-5 w-5 text-primary" />
+          <span className="font-semibold">September 20th, 2025</span>
+        </div>
+        <div className="flex items-center space-x-3 text-lg bg-card/20 backdrop-blur px-4 py-2 rounded-full">
+          <MapPin className="h-5 w-5 text-primary" />
+          <span className="font-semibold">Torrington Grounds, Colombo</span>
+        </div>
+      </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button asChild size="lg" className="text-lg px-8 shadow-lg hover:shadow-xl transition-all">
-                <Link href="/event-details">View Event Details</Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                size="lg"
-                className="text-lg px-8 bg-transparent border-primary/50 hover:bg-primary/10"
-              >
-                <Link href="/schedule">See Schedule</Link>
-              </Button>
+      <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <Button asChild size="lg" className="text-lg px-8 shadow-lg hover:shadow-xl transition-all">
+          <Link href="/event-details">View Event Details</Link>
+        </Button>
+        <Button
+          asChild
+          variant="outline"
+          size="lg"
+          className="text-lg px-8 bg-transparent border-primary/50 hover:bg-primary/10"
+        >
+          <Link href="/schedule">See Schedule</Link>
+        </Button>
             </div>
           </div>
         </div>
       </section>
+
 
       {/* Countdown Section */}
       <section className="py-16 bg-gradient-to-b from-card to-background">

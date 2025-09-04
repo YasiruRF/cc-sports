@@ -12,7 +12,6 @@ export const metadata: Metadata = {
   title: "Eclipse 2025 - Curtin University Colombo Sports Meet",
   description:
     "Join us for Eclipse 2025, Curtin University Colombo's inaugural sports meet on September 20th, 2025 at Torrington Grounds.",
-  generator: "v0.app",
 }
 
 export default function RootLayout({
