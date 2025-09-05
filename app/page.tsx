@@ -9,7 +9,7 @@ export default function HomePage() {
     <div className="flex flex-col">
       {/* Hero Section */}
       <section className="relative bg-black text-secondary-foreground h-screen overflow-hidden">
-  <div className="absolute inset-0 bg-[url('/abstract-sports-pattern-background.png')] opacity-5"></div>
+  <div className="absolute inset-0 bg-[url('https://cdn.pixabay.com/photo/2016/06/27/17/38/solar-eclipse-1482921_1280.jpg')] opacity-100"></div>
   <div className="absolute inset-0 bg-gradient-to-t from-secondary/80 to-transparent"></div>
 
   <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center h-full">
@@ -33,7 +33,10 @@ export default function HomePage() {
           <MapPin className="h-5 w-5 text-primary" />
           <span className="font-semibold">Torrington Grounds, Colombo</span>
         </div>
+        <div className="fixed inset-0 flex items-center justify-center z-50">
+    </div>
       </div>
+      {/*Put an arrow pointing down here?? */}
 
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         <Button asChild size="lg" className="text-lg px-8 shadow-lg hover:shadow-xl transition-all">
@@ -54,16 +57,16 @@ export default function HomePage() {
 
 
       {/* Countdown Section */}
-      <section className="py-16 bg-gradient-to-b from-card to-background">
+      <section className="py-16 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Event Countdown</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Event Countdown</h2>
           <p className="text-muted-foreground mb-8 text-lg">The excitement builds as we approach the big day</p>
           <CountdownTimer />
         </div>
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-primary/5">
+      <section className="py-16 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div className="space-y-2">
@@ -87,9 +90,9 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-16">
+      <section className="py-16 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">What to Expect</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">What to Expect</h2>
           <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
             Eclipse 2025 promises to be an extraordinary celebration of athleticism, teamwork, and university spirit
           </p>
@@ -137,9 +140,9 @@ export default function HomePage() {
       </section>
 
       {/* Houses Preview */}
-      <section className="py-16 bg-card">
+      <section className="py-16 bg-black">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">Choose Your House</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-primary">Choose Your House</h2>
           <p className="text-center text-muted-foreground mb-12 text-lg">
             Every great athlete belongs to a house. Which colors will you represent?
           </p>
@@ -196,9 +199,9 @@ export default function HomePage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10">
+      <section className="py-16 bg-black">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Make History?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-primary">Ready to Make History?</h2>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Be part of Curtin University Colombo&apos;s inaugural sports meet. Register now and help us create an
             unforgettable legacy.
@@ -207,7 +210,7 @@ export default function HomePage() {
             <Button asChild size="lg" className="text-lg px-8">
               <Link href="/event-details">Get Event Info</Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="text-lg px-8 bg-transparent">
+            <Button asChild variant="outline" size="lg" className="text-lg px-8 bg-transparent text-primary border-primary/50 hover:bg-primary/10">
               <Link href="/contact">Contact Organizers</Link>
             </Button>
           </div>

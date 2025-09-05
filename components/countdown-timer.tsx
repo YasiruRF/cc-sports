@@ -47,7 +47,7 @@ export function CountdownTimer() {
           <div className="text-3xl md:text-4xl font-bold text-primary mb-1">
             {timeLeft.days.toString().padStart(2, "0")}
           </div>
-          <div className="text-sm text-muted-foreground font-medium">Days</div>
+          <div className="text-sm text-muted-foreground font-medium text-white">Days</div>
         </CardContent>
       </Card>
       <Card className="bg-card/50 backdrop-blur border-primary/20">
@@ -55,7 +55,7 @@ export function CountdownTimer() {
           <div className="text-3xl md:text-4xl font-bold text-primary mb-1">
             {timeLeft.hours.toString().padStart(2, "0")}
           </div>
-          <div className="text-sm text-muted-foreground font-medium">Hours</div>
+          <div className="text-sm text-muted-foreground font-medium text-white">Hours</div>
         </CardContent>
       </Card>
       <Card className="bg-card/50 backdrop-blur border-primary/20">
@@ -63,7 +63,7 @@ export function CountdownTimer() {
           <div className="text-3xl md:text-4xl font-bold text-primary mb-1">
             {timeLeft.minutes.toString().padStart(2, "0")}
           </div>
-          <div className="text-sm text-muted-foreground font-medium">Minutes</div>
+          <div className="text-sm text-muted-foreground font-medium text-white">Minutes</div>
         </CardContent>
       </Card>
       <Card className="bg-card/50 backdrop-blur border-primary/20">
@@ -71,7 +71,7 @@ export function CountdownTimer() {
           <div className="text-3xl md:text-4xl font-bold text-primary mb-1">
             {timeLeft.seconds.toString().padStart(2, "0")}
           </div>
-          <div className="text-sm text-muted-foreground font-medium">Seconds</div>
+          <div className="text-sm text-muted-foreground font-medium text-white">Seconds</div>
         </CardContent>
       </Card>
     </div>
