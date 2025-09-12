@@ -1,0 +1,50 @@
+export const events = [
+  {
+    title: "Track & Field",
+    category: "Individual",
+    date: new Date("2025-09-21T08:00:00"),
+    venue: "Main Stadium",
+    description: "Sprint races, long jump, high jump, javelin, and more classic athletics events.",
+    image: "/placeholder-lchny.png",
+  },
+  {
+    title: "Swimming Championships",
+    category: "Individual",
+    date: new Date("2025-09-21T09:00:00"),
+    venue: "Aquatic Center",
+    description: "Freestyle, backstroke, butterfly, and relay competitions in our Olympic-standard pool.",
+    image: "/placeholder-6o1m3.png",
+  },
+  {
+    title: "Basketball Tournament",
+    category: "Team Sport",
+    date: new Date("2025-09-21T10:00:00"),
+    venue: "Sports Complex",
+    description: "House teams battle it out on the court in this high-energy tournament.",
+    image: "/basketball-action.png",
+  },
+  {
+    title: "Football Championship",
+    category: "Team Sport",
+    date: new Date("2025-09-22T09:00:00"),
+    venue: "Football Ground",
+    description: "The ultimate football showdown between houses.",
+    image: "/football-soccer-field-with-players.jpg",
+  },
+  {
+    title: "Volleyball Tournament",
+    category: "Team Sport",
+    date: new Date("2025-09-22T14:00:00"),
+    venue: "Indoor Stadium",
+    description: "Intense volleyball matches showcasing teamwork and skill.",
+    image: "/volleyball-court-with-players-jumping.jpg",
+  },
+  {
+    title: "Cricket Match",
+    category: "Team Sport",
+    date: new Date("2025-09-23T10:00:00"),
+    venue: "Cricket Ground",
+    description: "Traditional cricket matches between house teams.",
+    image: "/cricket-field-with-batsman-and-bowler.jpg",
+  }
+]

@@ -4,93 +4,93 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Updated color scheme for Eclipse 2025 gold and black theme */
-  --background: oklch(1 0 0); /* White background */
-  --foreground: oklch(0.145 0 0); /* Black text */
-  --card: oklch(0.98 0 0); /* Light gray card background */
-  --card-foreground: oklch(0.145 0 0); /* Black card text */
-  --popover: oklch(1 0 0); /* White popover */
-  --popover-foreground: oklch(0.145 0 0); /* Black popover text */
-  --primary: oklch(0.8 0.15 85); /* Gold primary color */
-  --primary-foreground: oklch(0.145 0 0); /* Black text on gold */
-  --secondary: oklch(0.145 0 0); /* Black secondary */
-  --secondary-foreground: oklch(1 0 0); /* White text on black */
-  --muted: oklch(0.97 0 0); /* Light muted background */
-  --muted-foreground: oklch(0.556 0 0); /* Gray muted text */
-  --accent: oklch(0.8 0.15 85); /* Gold accent */
-  --accent-foreground: oklch(0.145 0 0); /* Black text on gold accent */
-  --destructive: oklch(0.577 0.245 27.325); /* Red for errors */
-  --destructive-foreground: oklch(1 0 0); /* White text on red */
-  --border: oklch(0.922 0 0); /* Light gray borders */
-  --input: oklch(0.97 0 0); /* Light input background */
-  --ring: oklch(0.8 0.15 85 / 0.5); /* Gold focus ring */
-
-  /* House colors for charts and accents */
-  --chart-1: oklch(0.577 0.245 27.325); /* Red house */
-  --chart-2: oklch(0.6 0.25 250); /* Blue house */
-  --chart-3: oklch(0.6 0.25 142); /* Green house */
-  --chart-4: oklch(0.8 0.15 85); /* Yellow/Gold house */
-  --chart-5: oklch(0.145 0 0); /* Black accent */
-
-  --radius: 0.5rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.8 0.15 85);
-  --sidebar-primary-foreground: oklch(0.145 0 0);
+  /* Updated color scheme to black, gold, and white theme for Eclipse 2025 */
+  --background: oklch(0.98 0 0); /* Light background */
+  --foreground: oklch(0.1 0 0); /* Dark text for contrast */
+  --card: oklch(1 0 0); /* White cards */
+  --card-foreground: oklch(0.1 0 0); /* Dark text on cards */
+  --popover: oklch(0.85 0.15 85); /* Gold popover */
+  --popover-foreground: oklch(0.1 0 0); /* Black text on popover */
+  --primary: oklch(0.1 0 0); /* Black primary */
+  --primary-foreground: oklch(1 0 0); /* White text on primary */
+  --secondary: oklch(0.85 0.15 85); /* Gold secondary */
+  --secondary-foreground: oklch(0.1 0 0); /* Black text on secondary */
+  --muted: oklch(0.95 0 0); /* Light muted */
+  --muted-foreground: oklch(0.4 0 0); /* Dark gray text on muted */
+  --accent: oklch(0.85 0.15 85); /* Gold accent */
+  --accent-foreground: oklch(0.1 0 0); /* Black text on accent */
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.9 0 0); /* Light border */
+  --input: oklch(1 0 0); /* White input */
+  --ring: oklch(0.85 0.15 85 / 0.5); /* Gold ring */
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(1 0 0);
+  --sidebar-foreground: oklch(0.1 0 0);
+  --sidebar-primary: oklch(0.85 0.15 85);
+  --sidebar-primary-foreground: oklch(0.1 0 0);
   --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.145 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.8 0.15 85 / 0.5);
-
-  /* Custom Eclipse 2025 house colors */
-  --house-red: oklch(0.577 0.245 27.325);
-  --house-blue: oklch(0.6 0.25 250);
-  --house-green: oklch(0.6 0.25 142);
-  --house-yellow: oklch(0.8 0.15 85);
+  --sidebar-accent-foreground: oklch(0.1 0 0);
+  --sidebar-border: oklch(0.9 0 0);
+  --sidebar-ring: oklch(0.85 0.15 85 / 0.5);
+  /* Updated house colors for better contrast */
+  --phoenix-red: oklch(0.45 0.2 25); /* Gryffindor - Phoenix/Fire - Red/Maroon */
+  --nereus-blue: oklch(0.45 0.2 240); /* Nereus - Shark/Water - Blue */
+  --terra-green: oklch(0.45 0.2 120); /* Terra - Bear/Earth - Green */
+  --ventus-yellow: oklch(0.6 0.2 85); /* Ventus - Eagle/Air - Yellow */
 }
 
 .dark {
-  /* Dark mode with black background and gold accents */
-  --background: oklch(0.145 0 0); /* Black background */
-  --foreground: oklch(0.985 0 0); /* White text */
-  --card: oklch(0.2 0 0); /* Dark gray cards */
-  --card-foreground: oklch(0.985 0 0); /* White card text */
-  --popover: oklch(0.145 0 0); /* Black popover */
-  --popover-foreground: oklch(0.985 0 0); /* White popover text */
-  --primary: oklch(0.8 0.15 85); /* Gold primary stays same */
-  --primary-foreground: oklch(0.145 0 0); /* Black text on gold */
-  --secondary: oklch(0.269 0 0); /* Dark gray secondary */
-  --secondary-foreground: oklch(0.985 0 0); /* White text */
-  --muted: oklch(0.269 0 0); /* Dark muted */
-  --muted-foreground: oklch(0.708 0 0); /* Light gray muted text */
-  --accent: oklch(0.8 0.15 85); /* Gold accent */
-  --accent-foreground: oklch(0.145 0 0); /* Black text on gold */
-  --destructive: oklch(0.577 0.245 27.325); /* Red errors */
-  --destructive-foreground: oklch(0.985 0 0); /* White text on red */
-  --border: oklch(0.269 0 0); /* Dark borders */
-  --input: oklch(0.269 0 0); /* Dark inputs */
-  --ring: oklch(0.8 0.15 85 / 0.5); /* Gold focus ring */
-
-  /* House colors remain the same in dark mode */
-  --chart-1: oklch(0.577 0.245 27.325);
-  --chart-2: oklch(0.6 0.25 250);
-  --chart-3: oklch(0.6 0.25 142);
-  --chart-4: oklch(0.8 0.15 85);
-  --chart-5: oklch(0.985 0 0);
-
-  --sidebar: oklch(0.145 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.8 0.15 85);
-  --sidebar-primary-foreground: oklch(0.145 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.8 0.15 85 / 0.5);
+  /* Dark mode with inverted black/gold theme */
+  --background: oklch(0.1 0 0); /* Black background */
+  --foreground: oklch(1 0 0); /* White text for maximum contrast */
+  --card: oklch(0.15 0 0); /* Dark gray cards */
+  --card-foreground: oklch(1 0 0); /* White text on cards */
+  --popover: oklch(0.15 0 0);
+  --popover-foreground: oklch(1 0 0);
+  --primary: oklch(0.85 0.15 85); /* Gold primary in dark mode */
+  --primary-foreground: oklch(0.1 0 0); /* Black text on primary */
+  --secondary: oklch(0.2 0 0);
+  --secondary-foreground: oklch(1 0 0);
+  --muted: oklch(0.2 0 0);
+  --muted-foreground: oklch(0.8 0 0);
+  --accent: oklch(0.85 0.15 85); /* Gold accent */
+  --accent-foreground: oklch(0.1 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.2 0 0);
+  --input: oklch(0.2 0 0);
+  --ring: oklch(0.85 0.15 85 / 0.5);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.15 0 0);
+  --sidebar-foreground: oklch(1 0 0);
+  --sidebar-primary: oklch(0.85 0.15 85);
+  --sidebar-primary-foreground: oklch(0.1 0 0);
+  --sidebar-accent: oklch(0.2 0 0);
+  --sidebar-accent-foreground: oklch(1 0 0);
+  --sidebar-border: oklch(0.2 0 0);
+  --sidebar-ring: oklch(0.85 0.15 85 / 0.5);
+  --phoenix-red: oklch(0.6 0.2 25); /* Lighter in dark mode */
+  --nereus-blue: oklch(0.6 0.2 240);
+  --terra-green: oklch(0.6 0.2 120);
+  --ventus-yellow: oklch(0.75 0.2 85);
 }
 
 @theme inline {
+  /* Updated font configuration to use serif as primary */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -127,12 +127,6 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-
-  /* Added custom house color tokens */
-  --color-house-red: var(--house-red);
-  --color-house-blue: var(--house-blue);
-  --color-house-green: var(--house-green);
-  --color-house-yellow: var(--house-yellow);
 }
 
 @layer base {
@@ -144,44 +138,44 @@
   }
 }
 
-/* Added custom utility classes for house colors */
 @layer utilities {
-  .text-house-red {
-    color: var(--color-house-red);
+  .text-phoenix {
+    color: var(--phoenix-red);
   }
-  .text-house-blue {
-    color: var(--color-house-blue);
+  .bg-phoenix {
+    background-color: var(--phoenix-red);
   }
-  .text-house-green {
-    color: var(--color-house-green);
-  }
-  .text-house-yellow {
-    color: var(--color-house-yellow);
+  .border-phoenix {
+    border-color: var(--phoenix-red);
   }
 
-  .bg-house-red {
-    background-color: var(--color-house-red);
+  .text-nereus {
+    color: var(--nereus-blue);
   }
-  .bg-house-blue {
-    background-color: var(--color-house-blue);
+  .bg-nereus {
+    background-color: var(--nereus-blue);
   }
-  .bg-house-green {
-    background-color: var(--color-house-green);
-  }
-  .bg-house-yellow {
-    background-color: var(--color-house-yellow);
+  .border-nereus {
+    border-color: var(--nereus-blue);
   }
 
-  .border-house-red {
-    border-color: var(--color-house-red);
+  .text-terra {
+    color: var(--terra-green);
   }
-  .border-house-blue {
-    border-color: var(--color-house-blue);
+  .bg-terra {
+    background-color: var(--terra-green);
   }
-  .border-house-green {
-    border-color: var(--color-house-green);
+  .border-terra {
+    border-color: var(--terra-green);
   }
-  .border-house-yellow {
-    border-color: var(--color-house-yellow);
+
+  .text-ventus {
+    color: var(--ventus-yellow);
+  }
+  .bg-ventus {
+    background-color: var(--ventus-yellow);
+  }
+  .border-ventus {
+    border-color: var(--ventus-yellow);
   }
 }

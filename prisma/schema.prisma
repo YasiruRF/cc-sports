@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model Event {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  date        DateTime
+  venue       String
+  category    String
+  image       String?
+  houseId     Int
+  house       House    @relation(fields: [houseId], references: [id])
+}
+
+model House {
+  id          Int      @id @default(autoincrement())
+  name        String
+  description String
+  color       String
+  score       Int      @default(0)
+  events      Event[]
+}
+
+model Gallery {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  imageUrl    String
+  category    String
+}
+
+model Sponsor {
+  id       Int    @id @default(autoincrement())
+  name     String
+  logo     String
+  website  String
+  tier     String
+}

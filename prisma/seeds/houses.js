@@ -1,0 +1,48 @@
+export const houses = [
+  {
+    name: "Ignis",
+    element: "Fire",
+    color: "phoenix",
+    animal: "Phoenix",
+    description:
+      "Courage, determination, and the spirit of champions. Ignis house embodies the fierce passion of competition.",
+    traits: ["Brave", "Determined", "Passionate", "Leaders"],
+    score: 245,
+    bgColor: "bg-red-600",
+    textColor: "text-red-600",
+  },
+  {
+    name: "Nereus",
+    element: "Water",
+    color: "nereus",
+    animal: "Shark",
+    description:
+      "Fluid grace, strategic thinking, and relentless pursuit. Nereus house flows with precision and power.",
+    traits: ["Strategic", "Adaptable", "Persistent", "Graceful"],
+    score: 198,
+    bgColor: "bg-blue-600",
+    textColor: "text-blue-600",
+  },
+  {
+    name: "Terra",
+    element: "Earth",
+    color: "terra",
+    animal: "Bear",
+    description: "Strength, stability, and unwavering endurance. Terra house stands firm with unshakeable resolve.",
+    traits: ["Strong", "Reliable", "Enduring", "Grounded"],
+    score: 223,
+    bgColor: "bg-green-600",
+    textColor: "text-green-600",
+  },
+  {
+    name: "Ventus",
+    element: "Air",
+    color: "ventus",
+    animal: "Eagle",
+    description: "Speed, agility, and soaring ambition. Ventus house rises above with swift precision and vision.",
+    traits: ["Fast", "Agile", "Visionary", "Free-spirited"],
+    score: 187,
+    bgColor: "bg-yellow-600",
+    textColor: "text-yellow-600",
+  },
+]
