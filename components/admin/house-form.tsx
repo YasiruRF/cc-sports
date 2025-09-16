@@ -20,7 +20,7 @@ interface HouseFormProps {
 
 export function HouseForm({ open, onOpenChange, house, onSubmit }: HouseFormProps) {
   const [isLoading, setIsLoading] = useState(false)
-  const colors = ["red-600", "blue-600", "green-600", "yellow-600"]
+  const colors = ["Phoenix", "Shark", "Bear", "Falcon"]
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
