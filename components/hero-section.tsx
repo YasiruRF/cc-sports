@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Calendar, MapPin, Trophy } from "lucide-react"
+import Image from "next/image";
 
 export function HeroSection() {
   return (
@@ -13,8 +14,13 @@ export function HeroSection() {
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <div className="mb-8">
-          <h1 className="text-6xl md:text-8xl font-serif font-bold mb-4 text-balance">
-            Eclipse<span className="text-accent">⌒</span>
+          <h1 className="mb-4 flex justify-center">
+            <Image
+              src="/eclipse-logo.png"
+              alt="Eclipse logo"
+              width={380}
+              height={380}
+            ></Image>
           </h1>
           <div className="text-xl md:text-2xl font-light mb-2">2025</div>
           <p className="text-lg md:text-xl text-accent font-medium mb-6 text-balance">
