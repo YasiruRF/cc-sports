@@ -92,14 +92,21 @@ export default function AdminEventsPage() {
         onOpenChange={(open) => {
           if (!open) setUploadingEvent(null)
         }}
-        onUploadComplete={async (imageUrl) => {
+        onUploadComplete={async (imageUrls) => {
           if (!uploadingEvent) return
 
           try {
+            // If the event already has images, append new ones
+            const currentImages = uploadingEvent.image ? [uploadingEvent.image] : []
+            const allImages = [...currentImages, ...imageUrls]
+            
             const response = await fetch(`/api/admin/events/${uploadingEvent.id}`, {
               method: 'PATCH',
               headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ ...uploadingEvent, image: imageUrl }),
+              body: JSON.stringify({ 
+                ...uploadingEvent, 
+                image: allImages.join(',') // Store multiple URLs as comma-separated string
+              }),
             })
 
             if (!response.ok) {
