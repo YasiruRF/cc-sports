@@ -13,25 +13,25 @@ export async function HousesSection() {
       'Ignis': { 
         bg: 'border-red-600 border-2', 
         text: 'text-red-600', 
-        logo: '/ccsc/ignis.png',
+        logo: '/ccsc/Ignis.png',
         captain: '/ccsc/people/ignis.jpg' 
       },
       'Nereus': { 
         bg: 'border-blue-600 border-2', 
         text: 'text-blue-600', 
-        logo: '/ccsc/nereus.png',
+        logo: '/ccsc/Nereus.png',
         captain: '/ccsc/people/nereus.jpg' 
       },
       'Terra': { 
         bg: 'border-green-600 border-2', 
         text: 'text-green-600', 
-        logo: '/ccsc/terra.png',
+        logo: '/ccsc/Terra.png',
         captain: '/ccsc/people/terra.jpg' 
       },
       'Ventus': { 
         bg: 'border-yellow-600 border-2', 
         text: 'text-yellow-600', 
-        logo: '/ccsc/ventus.png',
+        logo: '/ccsc/Ventus.png',
         captain: '/ccsc/people/ventus.jpg' 
       },
     }

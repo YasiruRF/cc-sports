@@ -10,10 +10,10 @@ export async function ScoreboardSection() {
   // Map house colors to their respective CSS classes
   const getHouseStyles = (houseName: string) => {
     const styles = {
-      'Ignis': { bg: 'border-red-600 border-2', text: 'text-red-600', logo: '/ccsc/ignis.png' },
-      'Nereus': { bg: 'border-blue-600 border-2', text: 'text-blue-600', logo: '/ccsc/nereus.png' },
-      'Terra': { bg: 'border-green-600 border-2', text: 'text-green-600', logo: '/ccsc/terra.png' },
-      'Ventus': { bg: 'border-yellow-600 border-2', text: 'text-yellow-600', logo: '/ccsc/ventus.png' },
+      'Ignis': { bg: 'border-red-600 border-2', text: 'text-red-600', logo: '/ccsc/Ignis.png' },
+      'Nereus': { bg: 'border-blue-600 border-2', text: 'text-blue-600', logo: '/ccsc/Nereus.png' },
+      'Terra': { bg: 'border-green-600 border-2', text: 'text-green-600', logo: '/ccsc/Terra.png' },
+      'Ventus': { bg: 'border-yellow-600 border-2', text: 'text-yellow-600', logo: '/ccsc/Ventus.png' },
     }
     return styles[houseName as keyof typeof styles] || { bg: 'bg-gray-600', text: 'text-gray-600', logo: '' }
   }

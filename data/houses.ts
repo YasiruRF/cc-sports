@@ -6,7 +6,7 @@ export const houses = [
     animal: "Phoenix",
     description: "The house of fire, passion, and energy.",
     traits: ["Passionate", "Energetic", "Bold"],
-    logo: "/ccsc/ignis.png",
+    logo: "/ccsc/Ignis.png",
     captain: "/ccsc/people/ignis.jpg",
   },
   {
@@ -16,7 +16,7 @@ export const houses = [
     animal: "Falcon",
     description: "The house of wind, agility, and freedom.",
     traits: ["Agile", "Free-spirited", "Quick"],
-    logo: "/ccsc/ventus.png",
+    logo: "/ccsc/Ventus.png",
     captain: "/ccsc/people/ventus.jpg",
   },
   {
@@ -26,7 +26,7 @@ export const houses = [
     animal: "Bear",
     description: "The house of earth, strength, and resilience.",
     traits: ["Strong", "Resilient", "Grounded"],
-    logo: "/ccsc/terra.png",
+    logo: "/ccsc/Terra.png",
     captain: "/ccsc/people/terra.jpg",
   },
   {
@@ -36,7 +36,7 @@ export const houses = [
     animal: "Dolphin",
     description: "The house of water, adaptability, and calm.",
     traits: ["Adaptable", "Calm", "Resourceful"],
-    logo: "/ccsc/nereus.png",
+    logo: "/ccsc/Nereus.png",
     captain: "/ccsc/people/nereus.jpg",
   },
 ];
