@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Calendar, MapPin, Clock, Users } from "lucide-react"
+import { Calendar, MapPin, Clock, Users, Loader2 } from "lucide-react"
+import { supabase } from "@/lib/supabase"
 
 interface Event {
   id: number
@@ -16,10 +17,59 @@ interface Event {
   houseId: number
 }
 
+interface EventImage {
+  name: string
+  url: string
+}
+
 export function EventsDetailSection() {
   const [events, setEvents] = useState<Event[]>([])
   const [loading, setLoading] = useState(true)
   const [selectedEvent, setSelectedEvent] = useState<number | null>(null)
+  const [eventImages, setEventImages] = useState<EventImage[]>([])
+  const [loadingImages, setLoadingImages] = useState(false)
+
+  const fetchEventImages = async (eventId: number) => {
+    setLoadingImages(true)
+    try {
+      // List all files in the event folder
+      const { data: files, error: listError } = await supabase.storage
+        .from('CCSC')
+        .list(`event-images/${eventId}`)
+
+      if (listError) throw listError
+
+      if (files && files.length > 0) {
+        // Get signed URLs for all files
+        const images = await Promise.all(
+          files.map(async (file) => {
+            const { data: { signedUrl }, error } = await supabase.storage
+              .from('CCSC')
+              .createSignedUrl(`event-images/${eventId}/${file.name}`, 60 * 60) // 1 hour expiry
+
+            if (error) {
+              console.error('Error getting signed URL:', error)
+              return null
+            }
+            
+            return {
+              name: file.name,
+              url: signedUrl
+            }
+          })
+        )
+        // Filter out any null values from failed URL generations
+        setEventImages(images.filter((image): image is EventImage => image !== null))
+      } else {
+        setEventImages([])
+      }
+    } catch (error) {
+      console.error('Error fetching event images:', error)
+      setEventImages([])
+    } finally {
+      setLoadingImages(false)
+    }
+  }
 
   useEffect(() => {
     async function loadEvents() {
@@ -74,15 +124,21 @@ export function EventsDetailSection() {
                           <p className="text-accent font-serif font-semibold">{event.category}</p>
                         </div>
                       </div>
-                      {event.image && (
                         <Button
                           variant="outline"
-                          onClick={() => setSelectedEvent(isSelected ? null : event.id)}
+                          onClick={() => {
+                            if (isSelected) {
+                              setSelectedEvent(null)
+                              setEventImages([])
+                            } else {
+                              setSelectedEvent(event.id)
+                              fetchEventImages(event.id)
+                            }
+                          }}
                           className="font-serif"
                         >
                           {isSelected ? "Hide Gallery" : "View Gallery"}
                         </Button>
-                      )}
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-4 mb-4">
@@ -105,16 +161,31 @@ export function EventsDetailSection() {
                     <p className="text-foreground/80 font-serif leading-relaxed">{event.description}</p>
                   </div>
 
-                  {isSelected && event.image && (
+                  {isSelected && (
                     <div className="border-t bg-card/50 p-6">
                       <h4 className="text-lg font-serif font-bold text-foreground mb-4">Event Gallery</h4>
-                      <div className="aspect-video bg-muted rounded-lg overflow-hidden">
-                        <img
-                          src={event.image}
-                          alt={`${event.title}`}
-                          className="w-full h-full object-cover"
-                        />
-                      </div>
+                      {loadingImages ? (
+                        <div className="flex items-center justify-center h-40">
+                          <Loader2 className="h-6 w-6 animate-spin text-accent" />
+                        </div>
+                      ) : eventImages.length > 0 ? (
+                        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                          {eventImages.map((image, index) => (
+                            <div
+                              key={image.name}
+                              className="aspect-square bg-muted rounded-lg overflow-hidden hover:opacity-90 transition-opacity cursor-pointer"
+                            >
+                              <img
+                                src={image.url}
+                                alt={`${event.title} - Image ${index + 1}`}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          ))}
+                        </div>
+                      ) : (
+                        <p className="text-center text-muted-foreground font-serif">No images available for this event.</p>
+                      )}
                     </div>
                   )}
                 </CardContent>
