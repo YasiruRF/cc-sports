@@ -11,25 +11,25 @@ export async function HousesSection() {
   const getHouseStyles = (houseName: string) => {
     const styles = {
       'Ignis': { 
-        bg: 'bg-red-600', 
+        bg: 'border-red-600 border-2', 
         text: 'text-red-600', 
         logo: '/ccsc/ignis.png',
         captain: '/ccsc/people/ignis.jpg' 
       },
       'Nereus': { 
-        bg: 'bg-blue-600', 
+        bg: 'border-blue-600 border-2', 
         text: 'text-blue-600', 
         logo: '/ccsc/nereus.png',
         captain: '/ccsc/people/nereus.jpg' 
       },
       'Terra': { 
-        bg: 'bg-green-600', 
+        bg: 'border-green-600 border-2', 
         text: 'text-green-600', 
         logo: '/ccsc/terra.png',
         captain: '/ccsc/people/terra.jpg' 
       },
       'Ventus': { 
-        bg: 'bg-yellow-600', 
+        bg: 'border-yellow-600 border-2', 
         text: 'text-yellow-600', 
         logo: '/ccsc/ventus.png',
         captain: '/ccsc/people/ventus.jpg' 

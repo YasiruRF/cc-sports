@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Trophy } from "lucide-react"
 import { fetchHouses } from "@/lib/data"
 import { House } from "@/data/types"
+import Image from "next/image"
 
 export async function ScoreboardSection() {
   const houses = await fetchHouses()
@@ -9,12 +10,12 @@ export async function ScoreboardSection() {
   // Map house colors to their respective CSS classes
   const getHouseStyles = (houseName: string) => {
     const styles = {
-      'Ignis': { bg: 'bg-red-600', text: 'text-red-600' },
-      'Nereus': { bg: 'bg-blue-600', text: 'text-blue-600' },
-      'Terra': { bg: 'bg-green-600', text: 'text-green-600' },
-      'Ventus': { bg: 'bg-yellow-600', text: 'text-yellow-600' },
+      'Ignis': { bg: 'border-red-600 border-2', text: 'text-red-600', logo: '/ccsc/ignis.png' },
+      'Nereus': { bg: 'border-blue-600 border-2', text: 'text-blue-600', logo: '/ccsc/nereus.png' },
+      'Terra': { bg: 'border-green-600 border-2', text: 'text-green-600', logo: '/ccsc/terra.png' },
+      'Ventus': { bg: 'border-yellow-600 border-2', text: 'text-yellow-600', logo: '/ccsc/ventus.png' },
     }
-    return styles[houseName as keyof typeof styles] || { bg: 'bg-gray-600', text: 'text-gray-600' }
+    return styles[houseName as keyof typeof styles] || { bg: 'bg-gray-600', text: 'text-gray-600', logo: '' }
   }
 
   return (
@@ -35,9 +36,15 @@ export async function ScoreboardSection() {
               <Card key={house.name} className="relative overflow-hidden border-2 hover:shadow-lg transition-shadow">
                 <CardContent className="p-6 text-center">
                   <div
-                    className={`w-16 h-16 ${styles.bg} rounded-full flex items-center justify-center mx-auto mb-4`}
+                    className={`w-26 h-26 ${styles.bg} rounded-full p-3 flex items-center justify-center mx-auto mb-4`}
                   >
-                    <Trophy className="h-8 w-8 text-white" />
+                    <Image 
+                      src={styles.logo} 
+                      alt={`${house.name} Logo`} 
+                      className="w-full h-full object-contain"
+                      width={64}
+                      height={64}
+                    />
                   </div>
                   <h3 className={`text-2xl font-serif font-bold ${styles.text} mb-2`}>{house.name}</h3>
                   <p className="text-foreground/70 font-serif mb-4">{house.color}</p>
