@@ -9,16 +9,17 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
-import { Edit, Trash2 } from "lucide-react"
+import { Edit, Trash2, Upload } from "lucide-react"
 import type { Event, House } from "@prisma/client"
 
 interface EventsTableProps {
   events: (Event & { house: House })[]
   onEdit?: (event: Event & { house: House }) => void
   onDelete?: (event: Event & { house: House }) => void
+  onUpload?: (event: Event & { house: House }) => void
 }
 
-export function EventsTable({ events, onEdit, onDelete }: EventsTableProps) {
+export function EventsTable({ events, onEdit, onDelete, onUpload }: EventsTableProps) {
   const formatDate = (date: Date) => {
     return new Date(date).toLocaleDateString('en-US', {
       year: 'numeric',
@@ -62,6 +63,13 @@ export function EventsTable({ events, onEdit, onDelete }: EventsTableProps) {
                   onClick={() => onEdit?.(event)}
                 >
                   <Edit className="h-4 w-4" />
+                </Button>
+                <Button 
+                  size="icon" 
+                  variant="ghost"
+                  onClick={() => onUpload?.(event)}
+                >
+                  <Upload className="h-4 w-4" />
                 </Button>
                 <Button 
                   size="icon" 

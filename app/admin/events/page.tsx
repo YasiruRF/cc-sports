@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Plus } from "lucide-react"
 import { EventForm } from "@/components/admin/event-form"
 import { EventsTable } from "@/components/admin/events-table"
+import { ImageUploader } from "@/components/admin/image-uploader"
 import { useState, useEffect } from "react"
 import type { Event, House } from "@prisma/client"
 
@@ -14,6 +15,7 @@ export default function AdminEventsPage() {
   const [houses, setHouses] = useState<House[]>([])
   const [formOpen, setFormOpen] = useState(false)
   const [editingEvent, setEditingEvent] = useState<EventWithHouse | undefined>()
+  const [uploadingEvent, setUploadingEvent] = useState<EventWithHouse | null>(null)
 
   // Fetch events and houses on component mount
   useEffect(() => {
@@ -63,6 +65,9 @@ export default function AdminEventsPage() {
           setEditingEvent(event)
           setFormOpen(true)
         }}
+        onUpload={(event) => {
+          setUploadingEvent(event)
+        }}
         onDelete={async (event) => {
           if (confirm('Are you sure you want to delete this event?')) {
             try {
@@ -77,6 +82,35 @@ export default function AdminEventsPage() {
               console.error('Failed to delete event:', error)
               alert('Failed to delete event. Please try again.')
             }
+          }
+        }}
+      />
+
+      <ImageUploader
+        eventId={uploadingEvent?.id ?? 0}
+        open={!!uploadingEvent}
+        onOpenChange={(open) => {
+          if (!open) setUploadingEvent(null)
+        }}
+        onUploadComplete={async (imageUrl) => {
+          if (!uploadingEvent) return
+
+          try {
+            const response = await fetch(`/api/admin/events/${uploadingEvent.id}`, {
+              method: 'PATCH',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ ...uploadingEvent, image: imageUrl }),
+            })
+
+            if (!response.ok) {
+              throw new Error(`HTTP error! status: ${response.status}`)
+            }
+
+            const updated = await response.json()
+            setEvents(events.map(e => e.id === uploadingEvent.id ? updated : e))
+          } catch (error) {
+            console.error('Failed to update event:', error)
+            alert('Failed to update event with new image. Please try again.')
           }
         }}
       />

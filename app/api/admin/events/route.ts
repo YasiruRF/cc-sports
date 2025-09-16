@@ -9,6 +9,7 @@ const eventSchema = z.object({
   venue: z.string().min(1),
   category: z.string().min(1),
   houseId: z.number().min(1),
+  image: z.string().optional(),
 })
 
 export async function GET() {
