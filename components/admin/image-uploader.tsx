@@ -15,8 +15,44 @@ interface ImageUploaderProps {
 
 export function ImageUploader({ eventId, onUploadComplete, open, onOpenChange }: ImageUploaderProps) {
   const [uploading, setUploading] = useState(false)
+  const [clearing, setClearing] = useState(false)
   const [selectedFiles, setSelectedFiles] = useState<File[]>([])
   const [uploadProgress, setUploadProgress] = useState<number>(0)
+
+  const handleClearAll = async () => {
+    if (!confirm('Are you sure you want to delete all images for this event? This action cannot be undone.')) {
+      return
+    }
+
+    setClearing(true)
+    try {
+      // List all files in the event folder
+      const { data: files, error: listError } = await supabase.storage
+        .from('CCSC')
+        .list(`event-images/${eventId}`)
+
+      if (listError) throw listError
+
+      if (files && files.length > 0) {
+        // Delete all files in the folder
+        const { error: deleteError } = await supabase.storage
+          .from('CCSC')
+          .remove(files.map(file => `event-images/${eventId}/${file.name}`))
+
+        if (deleteError) throw deleteError
+
+        // Update the event to clear the image field
+        onUploadComplete([])
+      }
+
+      alert('All images have been deleted successfully.')
+    } catch (error) {
+      console.error('Error clearing images:', error)
+      alert('Failed to clear images. Please try again.')
+    } finally {
+      setClearing(false)
+    }
+  }
 
   const handleFileSelect = (event: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(event.target.files || [])
@@ -76,6 +112,23 @@ export function ImageUploader({ eventId, onUploadComplete, open, onOpenChange }:
           <DialogTitle>Upload Event Images</DialogTitle>
         </DialogHeader>
         <div className="space-y-4">
+          <div className="flex items-center justify-between w-full mb-4">
+            <Button
+              variant="destructive"
+              onClick={handleClearAll}
+              disabled={clearing || uploading}
+              className="w-32"
+            >
+              {clearing ? (
+                <>
+                  <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                  Clearing...
+                </>
+              ) : (
+                <>Clear All</>
+              )}
+            </Button>
+          </div>
           <div className="flex items-center justify-center w-full">
             <label className="flex flex-col items-center justify-center w-full h-40 border-2 border-dashed rounded-lg cursor-pointer hover:bg-muted/50">
               <div className="flex flex-col items-center justify-center pt-5 pb-6">

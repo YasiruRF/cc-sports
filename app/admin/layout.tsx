@@ -28,12 +28,6 @@ export default function AdminLayout({
                 Events
               </a>
               <a
-                href="/admin/gallery"
-                className="text-foreground hover:text-accent transition-colors px-3 py-2 rounded-md"
-              >
-                Gallery
-              </a>
-              <a
                 href="/admin/sponsors"
                 className="text-foreground hover:text-accent transition-colors px-3 py-2 rounded-md"
               >
