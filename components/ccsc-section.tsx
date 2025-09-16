@@ -65,7 +65,7 @@ export function CCSCSection() {
 
           <div className="bg-muted/30 rounded-lg p-8 text-center">
             <Image
-              src="/ccsc/ccsc.jpg"
+              src="/ccsc/people/ccsc.jpg"
               alt="CCSC Team"
               className="w-full h-64 object-cover rounded-lg mb-6"
               width={400}
