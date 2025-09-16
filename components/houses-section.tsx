@@ -63,7 +63,7 @@ export async function HousesSection() {
               >
                 <CardContent className="p-8 flex flex-col items-center relative">
                   {/* House Logo */}
-                  <div className={`w-24 h-24 rounded-full ${styles.bg} p-4 mb-6 shadow-lg`}>
+                  <div className={`w-28 h-28 rounded-full ${styles.bg} p-4 mb-6 shadow-lg`}>
                     <img 
                       src={styles.logo} 
                       alt={`${house.name} House Logo`} 
