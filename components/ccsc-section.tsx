@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Users, Trophy, Heart } from "lucide-react"
+import Image from "next/image"
 
 export function CCSCSection() {
   return (
@@ -63,10 +64,12 @@ export function CCSCSection() {
           </div>
 
           <div className="bg-muted/30 rounded-lg p-8 text-center">
-            <img
-              src="/sri-lankan-university-students-sports-team-group-p.jpg"
+            <Image
+              src="/ccsc/ccsc.jpg"
               alt="CCSC Team"
               className="w-full h-64 object-cover rounded-lg mb-6"
+              width={400}
+              height={300}
             />
             <h3 className="text-2xl font-serif font-bold text-foreground mb-4">Join the CCSC Family</h3>
             <p className="text-muted-foreground mb-6 text-balance">

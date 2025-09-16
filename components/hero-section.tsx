@@ -25,7 +25,7 @@ export function HeroSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8 text-sm md:text-base">
           <div className="flex items-center gap-2">
             <Calendar className="h-5 w-5 text-accent" />
-            <span>September 21, 2025 • 10:00 AM</span>
+            <span>September 20, 2025 • 08:00 AM</span>
           </div>
           <div className="flex items-center gap-2">
             <MapPin className="h-5 w-5 text-accent" />

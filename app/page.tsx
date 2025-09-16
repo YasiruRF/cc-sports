@@ -6,14 +6,14 @@ import { SponsorsSection } from "@/components/sponsors-section"
 import { EventsLinkSection } from "@/components/events-link-section"
 import { Footer } from "@/components/footer"
 
-export default function HomePage() {
+export default async function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main>
         <HeroSection />
         <CountdownSection />
-        <ScoreboardSection />
+        {await ScoreboardSection()}
         <SponsorsSection />
         <EventsLinkSection />
       </main>
