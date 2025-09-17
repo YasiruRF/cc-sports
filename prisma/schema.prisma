@@ -1,46 +1,61 @@
+// Modified Prisma schema
+
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
 
 model Event {
-  id          Int      @id @default(autoincrement())
-  title       String
-  description String
-  date        DateTime
-  venue       String
-  category    String
-  image       String?
-  houseId     Int
-  house       House    @relation(fields: [houseId], references: [id])
+  id              Int              @id @default(autoincrement())
+  name            String
+  sortingOrder    String // "Smallest Time/Short Distance" or "Largest Score"
+  finalized       Boolean          @default(false)
+  firstPlace      Int? // bidId of the student in 1st place
+  secondPlace     Int? // bidId of the student in 2nd place
+  thirdPlace      Int? // bidId of the student in 3rd place
+  eventCandidates EventCandidate[]
+  eventHouses     EventHouse[]
+}
+
+model Student {
+  bidId           Int              @unique
+  name            String
+  studentId       String           @unique
+  houseId         Int
+  house           House            @relation(fields: [houseId], references: [id])
+  eventCandidates EventCandidate[]
 }
 
 model House {
-  id          Int      @id @default(autoincrement())
+  id          Int          @id @default(autoincrement())
   name        String
-  description String
-  color       String
-  score       Int      @default(0)
-  events      Event[]
+  students    Student[]
+  eventHouses EventHouse[]
 }
 
-model Gallery {
-  id          Int      @id @default(autoincrement())
-  title       String
-  description String
-  imageUrl    String
-  category    String
+model EventCandidate {
+  eventId Int
+  event   Event   @relation(fields: [eventId], references: [id])
+  bidId   Int
+  student Student @relation(fields: [bidId], references: [bidId])
+  metric  Float?
+  score   Int?
+
+  @@id([eventId, bidId])
 }
 
-model Sponsor {
-  id       Int    @id @default(autoincrement())
-  name     String
-  logo     String
-  website  String
-  tier     String
+model EventHouse {
+  eventId Int
+  event   Event  @relation(fields: [eventId], references: [id])
+  houseId Int
+  house   House  @relation(fields: [houseId], references: [id])
+  metric  Float?
+  score   Int?
+
+  @@id([eventId, houseId])
 }
